@@ -15,39 +15,33 @@ PostureCoach is an innovative AI application designed to help sports enthusiasts
 3. Text-to-Speech (TTS) Integration:
 + Uses another AI model for direct audio feedback.
 + Converts text-based feedback into lifelike spoken audio.
-How It Works
-Upload Reference Media:
+## How It Works
+1. Upload Reference Media:
 Users upload photos or videos of correct posture they want to emulate.
-Practice and Record:
+2. Practice and Record:
 Users record their own practice sessions.
 Upload corresponding media to the app.
-Real-Time Analysis:
+3. Real-Time Analysis:
 PostureCoach analyzes user’s posture during practice.
 Compares it to reference poses.
-Feedback Loop:
+4. Feedback Loop:
 LLama 3 evaluates angles and provides feedback.
 TTS model converts feedback to spoken instructions.
-Getting Started
-Clone the Repository:
-git clone https://github.com/yourusername/PostureCoach.git
+## Flow Chart
+1. Detect 33 landmarks of human bodies to get 33 3D coordinates.
+2. Use coordinates to calculate 14 angles from each betwend 3 landmarks of human bodies.
+3. Compare trainee and trainer angles to find diffireance.
+4. give feedback.
+## Getting Started
+1. Clone the Repository:
++ git clone https://github.com/yourusername/PostureCoach.git
 
-Install Dependencies:
-pip install -r requirements.txt
+2. Install Dependencies:
++ pip install mediapipe.
++  pip install opencv
 
-Run the App:
-python app.py
-
-Usage
-Upload Reference Media:
-Add reference photos or videos to the app.
-Record Your Practice:
-Record your practice session.
-Upload your practice media.
-Receive Feedback:
-PostureCoach analyzes your posture.
-LLama 3 provides feedback.
-TTS model speaks the instructions.
-Acknowledgments
-Thanks to the open-source community for providing the tools and models used in this project.
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+3. Run the App:
++ Add trainee and trainer'exercise pose
++ modify image path
++ run app
++ check diffirence 
