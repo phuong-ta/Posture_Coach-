@@ -5,11 +5,13 @@ from pose_constants import body_parts
 import numpy as np
 
 
-# this class process image. this class has 3 objects "coordinates_list", "angle_list", and "content_list".
+# This class process image. 
+# This class has 3 objects "coordinates_list", "angle_list", and "content_list".
 #
 # . Flow chart
 # 1. Function "process_images" Use mediaPipe and CV2 to read image and get landmark's coordinates, then put all coordinates into coordinates_list
-# 2.
+# 2. Use coordinates_list and calculate angle function to claculate angles. Then put 14 angles to angle_list
+# 3. 
 
 class ImageProcessor:
     def __init__(self):
@@ -65,16 +67,19 @@ class ImageProcessor:
                 self.content_list.append(data_string)
                 self.angle_list.append(angle_degree)
 
+    # this function show 14 angles
     def display_angle_list(self):
         if len(self.angle_list) != 0:
             for angle in self.angle_list:
                 print(f"{angle:.2f}")
 
+    # this funtion will tell how big of angle between 3 landmark as string
     def display_content_list(self):
         if len(self.content_list) != 0:
             for content in self.content_list:
                 print(content)
 
+    # this funtion show 33 landmark coordinates
     def display_coordinates_list(self):
         if self.coordinates_list is not None:
             landmarks = self.coordinates_list.pose_landmarks.landmark
@@ -88,6 +93,8 @@ class ImageProcessor:
             print(type(landmarks))
             print(len(landmarks))
 """
+
+    # this funtion to compare same angles from 2 pose
     def __eq__(self, second_image_processor):
         # return self.coordinates_list.pose_landmarks.landmark == second_image_processor.coordinates_list.pose_landmarks.landmark
         if set(self.angle_list) == set(second_image_processor.angle_list):
