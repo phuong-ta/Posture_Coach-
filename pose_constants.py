@@ -1,3 +1,10 @@
+# Mediapipe tracks 33 body landmark locations. 
+# Because this project is used to detect human pose, so all landmark locations from head will removed.
+# From 22 body landmark locations to get 14 angles
+# This list is used to store data values
+# key is landmark id number ()
+# value is humand landmark name
+
 body_parts = [
     {11: 'left shoulder', 13: 'left elbow', 15: 'left wrist'},
     {12: 'right shoulder', 14: 'right elbow', 16: 'right wrist'},
